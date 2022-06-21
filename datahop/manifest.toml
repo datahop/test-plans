@@ -1,0 +1,32 @@
+name = "datahop"
+[defaults]
+builder = "exec:go"
+runner = "local:exec"
+
+[builders."docker:go"]
+enabled = true
+go_version = "1.17"
+module_path = "github.com/datahop/test-plans/datahop"
+exec_pkg = "."
+
+[builders."exec:go"]
+enabled = true
+module_path = "github.com/datahop/test-plans/datahop"
+
+[runners."local:docker"]
+enabled = true
+
+[runners."local:exec"]
+enabled = true
+
+[runners."cluster:k8s"]
+enabled = true
+
+[[testcases]]
+name= "connection"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name= "private-connection"
+instances = { min = 1, max = 1000, default = 2 }
+
