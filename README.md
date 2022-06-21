@@ -2,6 +2,5 @@
 
 ## Running
 ``` 
-// local exec
-testground run single --plan=test-plans/datahop --testcase=connection --runner=local:exec --builder=exec:go --instances=10
+testground run single --plan=test-plans/datahop --testcase=connection --runner=local:docker --builder=docker:go --instances=10
 ```

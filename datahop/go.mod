@@ -4,6 +4,7 @@ go 1.17
 
 require (
 	github.com/datahop/ipfs-lite v0.0.16
+	github.com/libp2p/go-libp2p-core v0.9.0
 	github.com/testground/sdk-go v0.3.0
 )
 
@@ -89,7 +90,6 @@ require (
 	github.com/libp2p/go-libp2p-blankhost v0.2.0 // indirect
 	github.com/libp2p/go-libp2p-circuit v0.4.0 // indirect
 	github.com/libp2p/go-libp2p-connmgr v0.2.4 // indirect
-	github.com/libp2p/go-libp2p-core v0.9.0 // indirect
 	github.com/libp2p/go-libp2p-discovery v0.5.1 // indirect
 	github.com/libp2p/go-libp2p-kad-dht v0.13.1 // indirect
 	github.com/libp2p/go-libp2p-kbucket v0.4.7 // indirect
