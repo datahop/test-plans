@@ -37,3 +37,7 @@ instances = { min = 1, max = 1000, default = 2 }
 [[testcases]]
 name= "group-closed"
 instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name= "group-replication"
+instances = { min = 1, max = 1000, default = 2 }
