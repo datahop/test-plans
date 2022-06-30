@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"log"
 	"os"
 	"os/user"
 	"time"
@@ -36,15 +37,15 @@ func Connection(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
 	absoluteRoot := usr.HomeDir + string(os.PathSeparator) + ".datahop"
 	err = pkg.Init(absoluteRoot, "4321")
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 	comm, err := pkg.New(context.Background(), absoluteRoot, "4321", nil)
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 	_, err = comm.Start("", false)
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 
 	initCtx.SyncClient.MustSignalAndWait(ctx, "listening", runenv.TestInstanceCount)
@@ -54,7 +55,7 @@ func Connection(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
 	runenv.RecordMessage("Listen address %s for node %d", comm.Node.AddrInfo(), seq)
 	_, err = client.Publish(ctx, st, comm.Node.AddrInfo())
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 	tch := make(chan *peer.AddrInfo, runenv.TestInstanceCount)
 	client.Subscribe(ctx, st, tch)
@@ -65,7 +66,7 @@ func Connection(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
 			runenv.RecordMessage("Trying to Connect with %s", t)
 			err = comm.Node.Connect(*t)
 			if err != nil {
-				panic(err)
+				log.Fatal(err)
 			}
 		}
 	}
@@ -86,15 +87,15 @@ func PrivateConnection(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
 	absoluteRoot := usr.HomeDir + string(os.PathSeparator) + ".datahop"
 	err = pkg.Init(absoluteRoot, "4321")
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 	comm, err := pkg.New(context.Background(), absoluteRoot, "4321", nil)
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 	_, err = comm.Start("PrivateConnection", false)
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 
 	initCtx.SyncClient.MustSignalAndWait(ctx, "listening", runenv.TestInstanceCount)
@@ -104,7 +105,7 @@ func PrivateConnection(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
 	runenv.RecordMessage("Listen address %s for node %d", comm.Node.AddrInfo(), seq)
 	_, err = client.Publish(ctx, st, comm.Node.AddrInfo())
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 	tch := make(chan *peer.AddrInfo, runenv.TestInstanceCount)
 	client.Subscribe(ctx, st, tch)
@@ -115,7 +116,7 @@ func PrivateConnection(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
 			runenv.RecordMessage("Trying to Connect with %s", t)
 			err = comm.Node.Connect(*t)
 			if err != nil {
-				panic(err)
+				log.Fatal(err)
 			}
 		}
 	}
@@ -155,15 +156,15 @@ func Group(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
 	absoluteRoot := usr.HomeDir + string(os.PathSeparator) + ".datahop"
 	err = pkg.Init(absoluteRoot, "4321")
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 	comm, err := pkg.New(context.Background(), absoluteRoot, "4321", nil)
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 	_, err = comm.Start("", false)
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 
 	initCtx.SyncClient.MustSignalAndWait(ctx, "listening", runenv.TestInstanceCount)
@@ -171,7 +172,7 @@ func Group(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
 	st := sync.NewTopic("transfer-addr", &peer.AddrInfo{})
 	_, err = client.Publish(ctx, st, comm.Node.AddrInfo())
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 	tch := make(chan *peer.AddrInfo, runenv.TestInstanceCount)
 	client.Subscribe(ctx, st, tch)
@@ -181,7 +182,7 @@ func Group(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
 		if t.ID != comm.Node.AddrInfo().ID {
 			err = comm.Node.Connect(*t)
 			if err != nil {
-				panic(err)
+				log.Fatal(err)
 			}
 		}
 	}
@@ -190,7 +191,7 @@ func Group(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
 	if seq == 1 {
 		gm, err := m.CreateOpenGroup("TestGroup", comm.Node.AddrInfo().ID, comm.Node.GetPrivKey())
 		if err != nil {
-			panic(err)
+			log.Fatal(err)
 		}
 		runenv.RecordMessage("Peer %s Created group: %s", comm.Node.AddrInfo().ID, gm.GroupID.String())
 
