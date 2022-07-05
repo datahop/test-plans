@@ -34,3 +34,7 @@ instances = { min = 1, max = 1000, default = 2 }
 name= "group"
 instances = { min = 1, max = 1000, default = 2 }
 
+[[testcases]]
+name= "content-distribution"
+instances = { min = 1, max = 1000, default = 2 }
+
