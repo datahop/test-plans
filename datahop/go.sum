@@ -169,8 +169,8 @@ github.com/creack/pty v1.1.7/go.mod h1:lj5s0c3V2DBrqTV7llrYr5NG6My20zk30Fl46Y7Do
 github.com/creack/pty v1.1.9/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
 github.com/cskr/pubsub v1.0.2 h1:vlOzMhl6PFn60gRlTQQsIfVwaPB/B/8MziK8FhEPt/0=
 github.com/cskr/pubsub v1.0.2/go.mod h1:/8MzYXk/NJAz782G8RPkFzXTZVu63VotefPnR9TIRis=
-github.com/datahop/go-bitswap v0.4.1-0.20220705050641-d3d9d0ed97da h1:tpOrZDHoB1YRdjyOhAcn11KdLpDB6Ni/7Eguvsb7nA4=
-github.com/datahop/go-bitswap v0.4.1-0.20220705050641-d3d9d0ed97da/go.mod h1:J2sAsp9UKxLgHDektSy3y3Q9OfQjM9sjhKBR1dlwrMg=
+github.com/datahop/go-bitswap v0.4.1-0.20220712100831-96ab1cbf56a1 h1:1O1G8JphJYRfsTHwClD2t0e367KDWerDU+rcxRdMmXw=
+github.com/datahop/go-bitswap v0.4.1-0.20220712100831-96ab1cbf56a1/go.mod h1:J2sAsp9UKxLgHDektSy3y3Q9OfQjM9sjhKBR1dlwrMg=
 github.com/datahop/ipfs-lite v0.0.17-0.20220705050740-cd48cc995c0d h1:TXnXtRCWgM7n3op3kcwicqxB3zuIyZkFsVO5txj+w0w=
 github.com/datahop/ipfs-lite v0.0.17-0.20220705050740-cd48cc995c0d/go.mod h1:JXC/CI5NYPkCzcddvdeZN7sId/kB7UG18x3HimegQ7I=
 github.com/davecgh/go-spew v0.0.0-20151105211317-5215b55f46b2/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=

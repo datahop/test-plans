@@ -9,4 +9,4 @@ require (
 	github.com/testground/sdk-go v0.3.0
 )
 
-replace github.com/ipfs/go-bitswap => github.com/datahop/go-bitswap v0.4.1-0.20220705050641-d3d9d0ed97da
+replace github.com/ipfs/go-bitswap => github.com/datahop/go-bitswap v0.4.1-0.20220712100831-96ab1cbf56a1

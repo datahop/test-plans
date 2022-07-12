@@ -227,7 +227,7 @@ func Group(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
 }
 
 func ContentDistribution(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
-	_ = logger.SetLogLevel("engine", "Debug")
+	logger.SetLogLevel("engine", "Debug")
 	totalTime := time.Minute * 5
 	ctx, cancel := context.WithTimeout(context.Background(), totalTime)
 	defer cancel()
@@ -281,20 +281,22 @@ func ContentDistribution(runenv *runtime.RunEnv, initCtx *run.InitContext) error
 		}
 		<-time.After(time.Second * 2)
 	}
-	netclient := network.NewClient(client, runenv)
-	config := &network.Config{
-		Network: "default",
-		Enable:  true,
-		Default: network.LinkShape{
-			Latency:   100 * time.Millisecond * time.Duration(seq),
-			Bandwidth: 1 << 16, // 1Mib
-		},
-		CallbackState: "network-configured",
-	}
-
-	err = netclient.ConfigureNetwork(ctx, config)
-	if err != nil {
-		return err
+	runenv.RecordMessage("SEQ %d", seq)
+	if seq != 1 {
+		netclient := network.NewClient(client, runenv)
+		config := &network.Config{
+			Network: "default",
+			Enable:  true,
+			Default: network.LinkShape{
+				Latency:   1000 * time.Millisecond,
+				Bandwidth: 1 << 10,
+			},
+			CallbackState: "network-configured",
+		}
+		err = netclient.ConfigureNetwork(ctx, config)
+		if err != nil {
+			return err
+		}
 	}
 	runenv.RecordMessage("Peer count %d", len(comm.Node.Peers()))
 	contentTopic := sync.NewTopic("transfer-content-addr", "")
