@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-	logger "github.com/ipfs/go-log/v2"
 	"io"
 	"log"
 	"os"
@@ -13,6 +12,7 @@ import (
 
 	"github.com/datahop/ipfs-lite/pkg"
 	"github.com/datahop/ipfs-lite/pkg/store"
+	logger "github.com/ipfs/go-log/v2"
 	"github.com/libp2p/go-libp2p-core/peer"
 	"github.com/testground/sdk-go/network"
 	"github.com/testground/sdk-go/run"
@@ -20,11 +20,70 @@ import (
 	"github.com/testground/sdk-go/sync"
 )
 
+const (
+	// file sizes
+	oneM     = 1024 * 1024
+	tenM     = oneM * 10
+	twentyM  = tenM * 2
+	fiftyM   = tenM * 5
+	hundredM = fiftyM * 2
+
+	// bandwidth
+	oneMbit     = 125000
+	tenMbit     = oneMbit * 10
+	hundredMbit = tenMbit * 10
+
+	// latency
+	ten     = 10
+	hundred = ten * 10
+	max     = hundred * 2
+)
+
 var testCases = map[string]interface{}{
-	"connection":         Connection,
-	"private-connection": PrivateConnection,
-	"group":              Group,
-	"content-distribution":              ContentDistribution,
+	"connection":           Connection,
+	"private-connection":   PrivateConnection,
+	"group":                Group,
+	"content-distribution": ContentDistribution,
+
+	"bitswap1":      BitswapTestCase1,
+	"bitswap1-10":   BitswapTestCase1Ten,
+	"bitswap1-100":  BitswapTestCase1Hundred,
+	"bitswap1-rand": BitswapTestCase1Rand,
+
+	"bitswap1-0-one":    BitswapTestCase1ZeroOne,
+	"bitswap1-10-one":   BitswapTestCase1TenOne,
+	"bitswap1-100-one":  BitswapTestCase1HundredOne,
+	"bitswap1-rand-one": BitswapTestCase1RandOne,
+
+	"bitswap1-0-ten":    BitswapTestCase1ZeroTen,
+	"bitswap1-10-ten":   BitswapTestCase1TenTen,
+	"bitswap1-100-ten":  BitswapTestCase1HundredTen,
+	"bitswap1-rand-ten": BitswapTestCase1RandTen,
+
+	"bitswap1-0-hund":    BitswapTestCase1ZeroHund,
+	"bitswap1-10-hund":   BitswapTestCase1TenHund,
+	"bitswap1-100-hund":  BitswapTestCase1HundredHund,
+	"bitswap1-rand-hund": BitswapTestCase1RandHund,
+
+	"bitswap2":      BitswapTestCase2,
+	"bitswap2-10":   BitswapTestCase2Ten,
+	"bitswap2-100":  BitswapTestCase2Hundred,
+	"bitswap2-rand": BitswapTestCase2Rand,
+
+	"bitswap2-0-one":    BitswapTestCase2ZeroOne,
+	"bitswap2-10-one":   BitswapTestCase2TenOne,
+	"bitswap2-100-one":  BitswapTestCase2HundredOne,
+	"bitswap2-rand-one": BitswapTestCase2RandOne,
+
+	"bitswap2-0-ten":    BitswapTestCase2ZeroTen,
+	"bitswap2-10-ten":   BitswapTestCase2TenTen,
+	"bitswap2-100-ten":  BitswapTestCase2HundredTen,
+	"bitswap2-rand-ten": BitswapTestCase2RandTen,
+
+	"bitswap2-0-hund":    BitswapTestCase2ZeroHund,
+	"bitswap2-10-hund":   BitswapTestCase2TenHund,
+	"bitswap2-100-hund":  BitswapTestCase2HundredHund,
+	"bitswap2-rand-hund": BitswapTestCase2RandHund,
 }
 
 func main() {
@@ -227,7 +286,6 @@ func Group(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
 }
 
 func ContentDistribution(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
-	logger.SetLogLevel("engine", "Debug")
 	totalTime := time.Minute * 5
 	ctx, cancel := context.WithTimeout(context.Background(), totalTime)
 	defer cancel()
@@ -275,28 +333,11 @@ func ContentDistribution(runenv *runtime.RunEnv, initCtx *run.InitContext) error
 	}
 	for {
 		runenv.RecordMessage("Peer count now %d", len(comm.Node.Peers()))
-		if len(comm.Node.Peers()) == runenv.TestInstanceCount - 1 {
+		if len(comm.Node.Peers()) == runenv.TestInstanceCount-1 {
 			initCtx.SyncClient.MustSignalAndWait(ctx, "connected", runenv.TestInstanceCount)
 			break
 		}
 		<-time.After(time.Second * 2)
-	}
-	runenv.RecordMessage("SEQ %d", seq)
-	if seq != 1 {
-		netclient := network.NewClient(client, runenv)
-		config := &network.Config{
-			Network: "default",
-			Enable:  true,
-			Default: network.LinkShape{
-				Latency:   1000 * time.Millisecond,
-				Bandwidth: 1 << 10,
-			},
-			CallbackState: "network-configured",
-		}
-		err = netclient.ConfigureNetwork(ctx, config)
-		if err != nil {
-			return err
-		}
 	}
 	runenv.RecordMessage("Peer count %d", len(comm.Node.Peers()))
 	contentTopic := sync.NewTopic("transfer-content-addr", "")
@@ -322,7 +363,7 @@ func ContentDistribution(runenv *runtime.RunEnv, initCtx *run.InitContext) error
 		}
 		runenv.RecordMessage("Added content %s", id)
 	}
-	<-time.After(time.Second*10)
+	<-time.After(time.Second * 10)
 	tags, err := comm.Node.ReplManager().GetAllTags()
 	if err != nil {
 		log.Fatal(err)
@@ -345,6 +386,11 @@ func ContentDistribution(runenv *runtime.RunEnv, initCtx *run.InitContext) error
 		runenv.RecordMessage("Got data  %s", string(data))
 	}
 	initCtx.SyncClient.MustSignalAndWait(ctx, "download completed", runenv.TestInstanceCount)
+	bs, err := comm.Node.BitswapStat()
+	if err != nil {
+		log.Fatal(err)
+	}
+	runenv.RecordMessage("Bitswap Stat for node %d : %+v", seq, bs)
 	cancel()
 	return nil
 }
