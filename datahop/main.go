@@ -84,6 +84,66 @@ var testCases = map[string]interface{}{
 	"bitswap2-10-hund":   BitswapTestCase2TenHund,
 	"bitswap2-100-hund":  BitswapTestCase2HundredHund,
 	"bitswap2-rand-hund": BitswapTestCase2RandHund,
+
+	"bitswap3":      BitswapTestCase3,
+	"bitswap3-10":   BitswapTestCase3Ten,
+	"bitswap3-100":  BitswapTestCase3Hundred,
+	"bitswap3-rand": BitswapTestCase3Rand,
+
+	"bitswap3-0-one":    BitswapTestCase3ZeroOne,
+	"bitswap3-10-one":   BitswapTestCase3TenOne,
+	"bitswap3-100-one":  BitswapTestCase3HundredOne,
+	"bitswap3-rand-one": BitswapTestCase3RandOne,
+
+	"bitswap3-0-ten":    BitswapTestCase3ZeroTen,
+	"bitswap3-10-ten":   BitswapTestCase3TenTen,
+	"bitswap3-100-ten":  BitswapTestCase3HundredTen,
+	"bitswap3-rand-ten": BitswapTestCase3RandTen,
+
+	"bitswap3-0-hund":    BitswapTestCase3ZeroHund,
+	"bitswap3-10-hund":   BitswapTestCase3TenHund,
+	"bitswap3-100-hund":  BitswapTestCase3HundredHund,
+	"bitswap3-rand-hund": BitswapTestCase3RandHund,
+
+	"bitswap4":      BitswapTestCase4,
+	"bitswap4-10":   BitswapTestCase4Ten,
+	"bitswap4-100":  BitswapTestCase4Hundred,
+	"bitswap4-rand": BitswapTestCase4Rand,
+
+	"bitswap4-0-one":    BitswapTestCase4ZeroOne,
+	"bitswap4-10-one":   BitswapTestCase4TenOne,
+	"bitswap4-100-one":  BitswapTestCase4HundredOne,
+	"bitswap4-rand-one": BitswapTestCase4RandOne,
+
+	"bitswap4-0-ten":    BitswapTestCase4ZeroTen,
+	"bitswap4-10-ten":   BitswapTestCase4TenTen,
+	"bitswap4-100-ten":  BitswapTestCase4HundredTen,
+	"bitswap4-rand-ten": BitswapTestCase4RandTen,
+
+	"bitswap4-0-hund":    BitswapTestCase4ZeroHund,
+	"bitswap4-10-hund":   BitswapTestCase4TenHund,
+	"bitswap4-100-hund":  BitswapTestCase4HundredHund,
+	"bitswap4-rand-hund": BitswapTestCase4RandHund,
+
+	"bitswap5":      BitswapTestCase5,
+	"bitswap5-10":   BitswapTestCase5Ten,
+	"bitswap5-100":  BitswapTestCase5Hundred,
+	"bitswap5-rand": BitswapTestCase5Rand,
+
+	"bitswap5-0-one":    BitswapTestCase5ZeroOne,
+	"bitswap5-10-one":   BitswapTestCase5TenOne,
+	"bitswap5-100-one":  BitswapTestCase5HundredOne,
+	"bitswap5-rand-one": BitswapTestCase5RandOne,
+
+	"bitswap5-0-ten":    BitswapTestCase5ZeroTen,
+	"bitswap5-10-ten":   BitswapTestCase5TenTen,
+	"bitswap5-100-ten":  BitswapTestCase5HundredTen,
+	"bitswap5-rand-ten": BitswapTestCase5RandTen,
+
+	"bitswap5-0-hund":    BitswapTestCase5ZeroHund,
+	"bitswap5-10-hund":   BitswapTestCase5TenHund,
+	"bitswap5-100-hund":  BitswapTestCase5HundredHund,
+	"bitswap5-rand-hund": BitswapTestCase5RandHund,
 }
 
 func main() {
