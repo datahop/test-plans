@@ -35,9 +35,332 @@ name= "group-open"
 instances = { min = 1, max = 1000, default = 2 }
 
 [[testcases]]
-name= "group-closed"
+name= "content-distribution"
 instances = { min = 1, max = 1000, default = 2 }
 
 [[testcases]]
-name= "group-replication"
+name = "bitswap1"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap1-10"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap1-100"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap1-rand"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap1-0-one"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap1-10-one"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap1-100-one"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap1-rand-one"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap1-0-ten"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap1-10-ten"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap1-100-ten"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap1-rand-ten"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap1-0-hund"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap1-10-hund"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap1-100-hund"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap1-rand-hund"
+instances = { min = 1, max = 1000, default = 2 }
+
+
+[[testcases]]
+name = "bitswap2"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap2-10"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap2-100"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap2-rand"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap2-0-one"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap2-10-one"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap2-100-one"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap2-rand-one"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap2-0-ten"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap2-10-ten"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap2-100-ten"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap2-rand-ten"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap2-0-hund"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap2-10-hund"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap2-100-hund"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap2-rand-hund"
+instances = { min = 1, max = 1000, default = 2 }
+
+
+
+[[testcases]]
+name = "bitswap3"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap3-10"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap3-100"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap3-rand"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap3-0-one"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap3-10-one"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap3-100-one"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap3-rand-one"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap3-0-ten"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap3-10-ten"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap3-100-ten"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap3-rand-ten"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap3-0-hund"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap3-10-hund"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap3-100-hund"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap3-rand-hund"
+instances = { min = 1, max = 1000, default = 2 }
+
+
+
+[[testcases]]
+name = "bitswap4"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap4-10"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap4-100"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap4-rand"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap4-0-one"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap4-10-one"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap4-100-one"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap4-rand-one"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap4-0-ten"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap4-10-ten"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap4-100-ten"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap4-rand-ten"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap4-0-hund"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap4-10-hund"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap4-100-hund"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap4-rand-hund"
+instances = { min = 1, max = 1000, default = 2 }
+
+
+
+[[testcases]]
+name = "bitswap5"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap5-10"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap5-100"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap5-rand"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap5-0-one"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap5-10-one"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap5-100-one"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap5-rand-one"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap5-0-ten"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap5-10-ten"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap5-100-ten"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap5-rand-ten"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap5-0-hund"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap5-10-hund"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap5-100-hund"
+instances = { min = 1, max = 1000, default = 2 }
+
+[[testcases]]
+name = "bitswap5-rand-hund"
 instances = { min = 1, max = 1000, default = 2 }
