@@ -42,7 +42,6 @@ const (
 var testCases = map[string]interface{}{
 	"connection":           Connection,
 	"private-connection":   PrivateConnection,
-	"group":                Group,
 	"content-distribution": ContentDistribution,
 
 	"bitswap1":      BitswapTestCase1,
