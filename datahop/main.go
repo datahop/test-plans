@@ -150,7 +150,7 @@ func main() {
 }
 
 func Connection(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
-	totalTime := time.Minute * 1
+	totalTime := time.Minute * 60
 	ctx, cancel := context.WithTimeout(context.Background(), totalTime)
 	defer cancel()
 	initCtx.MustWaitAllInstancesInitialized(ctx)

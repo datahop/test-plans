@@ -15,7 +15,7 @@ import (
 )
 
 func BitswapTestCase3(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
-	totalTime := time.Minute * 10
+	totalTime := time.Minute * 60
 	ctx, cancel := context.WithTimeout(context.Background(), totalTime)
 	defer cancel()
 	initCtx.MustWaitAllInstancesInitialized(ctx)
@@ -92,7 +92,7 @@ func BitswapTestCase3(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
 }
 
 func BitswapTestCase3Ten(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
-	totalTime := time.Minute * 10
+	totalTime := time.Minute * 60
 	ctx, cancel := context.WithTimeout(context.Background(), totalTime)
 	defer cancel()
 	initCtx.MustWaitAllInstancesInitialized(ctx)
@@ -183,7 +183,7 @@ func BitswapTestCase3Ten(runenv *runtime.RunEnv, initCtx *run.InitContext) error
 }
 
 func BitswapTestCase3Hundred(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
-	totalTime := time.Minute * 10
+	totalTime := time.Minute * 60
 	ctx, cancel := context.WithTimeout(context.Background(), totalTime)
 	defer cancel()
 	initCtx.MustWaitAllInstancesInitialized(ctx)
@@ -276,7 +276,7 @@ func BitswapTestCase3Hundred(runenv *runtime.RunEnv, initCtx *run.InitContext) e
 func BitswapTestCase3Rand(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
 	mRand.Seed(time.Now().UnixNano())
 	r := mRand.Intn(max-ten+1) + ten
-	totalTime := time.Minute * 10
+	totalTime := time.Minute * 60
 	ctx, cancel := context.WithTimeout(context.Background(), totalTime)
 	defer cancel()
 	initCtx.MustWaitAllInstancesInitialized(ctx)
@@ -367,7 +367,7 @@ func BitswapTestCase3Rand(runenv *runtime.RunEnv, initCtx *run.InitContext) erro
 }
 
 func BitswapTestCase3ZeroOne(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
-	totalTime := time.Minute * 10
+	totalTime := time.Minute * 60
 	ctx, cancel := context.WithTimeout(context.Background(), totalTime)
 	defer cancel()
 	initCtx.MustWaitAllInstancesInitialized(ctx)
@@ -457,7 +457,7 @@ func BitswapTestCase3ZeroOne(runenv *runtime.RunEnv, initCtx *run.InitContext) e
 }
 
 func BitswapTestCase3TenOne(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
-	totalTime := time.Minute * 10
+	totalTime := time.Minute * 60
 	ctx, cancel := context.WithTimeout(context.Background(), totalTime)
 	defer cancel()
 	initCtx.MustWaitAllInstancesInitialized(ctx)
@@ -549,7 +549,7 @@ func BitswapTestCase3TenOne(runenv *runtime.RunEnv, initCtx *run.InitContext) er
 }
 
 func BitswapTestCase3HundredOne(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
-	totalTime := time.Minute * 10
+	totalTime := time.Minute * 60
 	ctx, cancel := context.WithTimeout(context.Background(), totalTime)
 	defer cancel()
 	initCtx.MustWaitAllInstancesInitialized(ctx)
@@ -643,7 +643,7 @@ func BitswapTestCase3HundredOne(runenv *runtime.RunEnv, initCtx *run.InitContext
 func BitswapTestCase3RandOne(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
 	mRand.Seed(time.Now().UnixNano())
 	r := mRand.Intn(max-ten+1) + ten
-	totalTime := time.Minute * 10
+	totalTime := time.Minute * 60
 	ctx, cancel := context.WithTimeout(context.Background(), totalTime)
 	defer cancel()
 	initCtx.MustWaitAllInstancesInitialized(ctx)
@@ -735,7 +735,7 @@ func BitswapTestCase3RandOne(runenv *runtime.RunEnv, initCtx *run.InitContext) e
 }
 
 func BitswapTestCase3ZeroTen(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
-	totalTime := time.Minute * 10
+	totalTime := time.Minute * 60
 	ctx, cancel := context.WithTimeout(context.Background(), totalTime)
 	defer cancel()
 	initCtx.MustWaitAllInstancesInitialized(ctx)
@@ -825,7 +825,7 @@ func BitswapTestCase3ZeroTen(runenv *runtime.RunEnv, initCtx *run.InitContext) e
 }
 
 func BitswapTestCase3TenTen(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
-	totalTime := time.Minute * 10
+	totalTime := time.Minute * 60
 	ctx, cancel := context.WithTimeout(context.Background(), totalTime)
 	defer cancel()
 	initCtx.MustWaitAllInstancesInitialized(ctx)
@@ -917,7 +917,7 @@ func BitswapTestCase3TenTen(runenv *runtime.RunEnv, initCtx *run.InitContext) er
 }
 
 func BitswapTestCase3HundredTen(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
-	totalTime := time.Minute * 10
+	totalTime := time.Minute * 60
 	ctx, cancel := context.WithTimeout(context.Background(), totalTime)
 	defer cancel()
 	initCtx.MustWaitAllInstancesInitialized(ctx)
@@ -1011,7 +1011,7 @@ func BitswapTestCase3HundredTen(runenv *runtime.RunEnv, initCtx *run.InitContext
 func BitswapTestCase3RandTen(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
 	mRand.Seed(time.Now().UnixNano())
 	r := mRand.Intn(max-ten+1) + ten
-	totalTime := time.Minute * 10
+	totalTime := time.Minute * 60
 	ctx, cancel := context.WithTimeout(context.Background(), totalTime)
 	defer cancel()
 	initCtx.MustWaitAllInstancesInitialized(ctx)
@@ -1103,7 +1103,7 @@ func BitswapTestCase3RandTen(runenv *runtime.RunEnv, initCtx *run.InitContext) e
 }
 
 func BitswapTestCase3ZeroHund(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
-	totalTime := time.Minute * 10
+	totalTime := time.Minute * 60
 	ctx, cancel := context.WithTimeout(context.Background(), totalTime)
 	defer cancel()
 	initCtx.MustWaitAllInstancesInitialized(ctx)
@@ -1193,7 +1193,7 @@ func BitswapTestCase3ZeroHund(runenv *runtime.RunEnv, initCtx *run.InitContext) 
 }
 
 func BitswapTestCase3TenHund(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
-	totalTime := time.Minute * 10
+	totalTime := time.Minute * 60
 	ctx, cancel := context.WithTimeout(context.Background(), totalTime)
 	defer cancel()
 	initCtx.MustWaitAllInstancesInitialized(ctx)
@@ -1285,7 +1285,7 @@ func BitswapTestCase3TenHund(runenv *runtime.RunEnv, initCtx *run.InitContext) e
 }
 
 func BitswapTestCase3HundredHund(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
-	totalTime := time.Minute * 10
+	totalTime := time.Minute * 60
 	ctx, cancel := context.WithTimeout(context.Background(), totalTime)
 	defer cancel()
 	initCtx.MustWaitAllInstancesInitialized(ctx)
@@ -1379,7 +1379,7 @@ func BitswapTestCase3HundredHund(runenv *runtime.RunEnv, initCtx *run.InitContex
 func BitswapTestCase3RandHund(runenv *runtime.RunEnv, initCtx *run.InitContext) error {
 	mRand.Seed(time.Now().UnixNano())
 	r := mRand.Intn(max-ten+1) + ten
-	totalTime := time.Minute * 10
+	totalTime := time.Minute * 60
 	ctx, cancel := context.WithTimeout(context.Background(), totalTime)
 	defer cancel()
 	initCtx.MustWaitAllInstancesInitialized(ctx)
